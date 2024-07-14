@@ -27,7 +27,7 @@ TETROMINOES={
 bg=pygame.image.load('photo.jpg').convert()
 bg_game=pygame.image.load('photo2.jpg').convert()
 
-figures=[[pygame.Rect(x+FIELD_W//2,y+1,1,1,1)for x,y in fig_pos]for fig_pos in TETROMINOES]
+figures=[[pygame.Rect(x+FIELD_W//2,y+1,1,1)for x,y in fig_pos]for fig_pos in TETROMINOES]
 figure_rect=pygame.Rect(0,0,TILE_SIZE-2,TILE_SIZE-2)
 field= [[0 for i in range(FIELD_W) ]for j in range(FIELD_H)]
 figure,next_figure=deepcopy(choice(figures)),deepcopy(choice(figures))
@@ -35,8 +35,8 @@ anim_count,anim_speed,anim_limit=0,60,2000
 score,lines=0,0
 scores={0:0,1:100,2:300,3:700,4:1000}
 
-main_font=pygame.font.Font('font/font.ttf',65)
-font=pygame.font.Font('font/font.ttf',45)  
+main_font=pygame.font.Font('font.ttf',65)
+font=pygame.font.Font('font.ttf',45)  
 
 title_tetris=main_font.render('tetris',True,pygame.Color('yellow'))
 title_score=main_font.render('score',True,pygame.Color('blue'))
@@ -157,6 +157,8 @@ while True:
           pygame.display.flip()
           clock.tick(FPS)
 
+     pygame.display.flip()
+     clock.tick(FPS)
 
 
      
